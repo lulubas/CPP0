@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:15:16 by lbastien          #+#    #+#             */
-/*   Updated: 2024/03/27 17:27:41 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/04/01 00:10:03 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "main.hpp"
 
 int main(void)
 {
 	std::string str;
-	while (1)
+	PhoneBook Mybook;
+	while (true)
 	{
-		std::cout << "Type a string here: ";
-		std::cin >> str;
-		if (!str.compare("EXIT"))
-			return(EXIT_SUCCESS);
-		std::cout << "String is: " << str;
-		std::cout << std::endl;
+		Mybook.sayHello();
+		std::cout << "What would you like to do now?\n";
+    	std::cout << "> ";
+		std::getline(std::cin, str);
+		if (str == "ADD")
+			Mybook.addContact();
+		else if (str == "SEARCH")
+			Mybook.searchContact();
+		else if (str == "EXIT")
+		{
+			Mybook.sayGoodbye();
+			return (EXIT_SUCCESS);
+		}
+		system("clear");
 	}
 	return(EXIT_SUCCESS);
 }

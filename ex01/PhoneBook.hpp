@@ -6,20 +6,31 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:16:40 by lbastien          #+#    #+#             */
-/*   Updated: 2024/03/28 01:25:40 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/04/01 00:23:23 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<Constact.hpp>
-#include<string>
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
+#include "main.hpp"
 
 class PhoneBook {
     public:
-        void hello(void) const;
-        void addContact(const Contact newContact);
-        void searchContact (int contactIndex) const;
+        PhoneBook();
+
+        void sayHello() const;
+        void sayGoodbye() const;
+        void addContact();
+        void searchContact() const;
     
     private:
-        Contact contacts[8];
         int nextIndex;
-}
+        Contact contacts[8];
+        std::string inputInfo(std::string str);
+        void promptSearch()  const;
+        void displayField(const std::string str) const;
+        void printContact(int index) const;
+};
+
+#endif
