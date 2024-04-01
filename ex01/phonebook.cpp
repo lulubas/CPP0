@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:15:48 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/01 00:26:17 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/04/01 02:23:31 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void PhoneBook::sayHello() const {
     std::cout << "Here's what you can do:\n";
     std::cout << " - ADD: Add a new contact\n";
     std::cout << " - SEARCH: Look up an existing contact\n";
-    std::cout << " - EXIT: Close the PhoneBook\n\n";
+    std::cout << " - EXIT: Close the PhoneBook\n";
+
 }
 
 void PhoneBook::sayGoodbye() const {
@@ -39,6 +40,7 @@ void PhoneBook::addContact() {
     std::string phone;
     std::string secret;
 
+    system("clear");
     firstname = PhoneBook::inputInfo("First Name");
     lastname = PhoneBook::inputInfo("Last Name");
     nickname = PhoneBook::inputInfo("Nickname");
@@ -100,8 +102,8 @@ void PhoneBook::searchContact() const {
 void PhoneBook::promptSearch() const {
     int i;
     std::cout << "=============================================\n";
-    std::cout << "Choose among the contacts currently in the PhoneBook 👀\n.";
-    std::cout << "Enter EXIT to go back to the PhoneBook main page.";
+    std::cout << "Choose among the contacts currently in the PhoneBook 👀.\n";
+    std::cout << "Enter EXIT to go back to the PhoneBook main page.\n";
     std::cout << "=============================================\n\n";
 
     displayField("Index");
@@ -111,7 +113,7 @@ void PhoneBook::promptSearch() const {
     std::cout << std::endl;
 
     for (i = 0; i < 8; i++) {
-        displayField(std::to_string(i));
+        displayField(std::to_string(i + 1));
         displayField(contacts[i].getFirstName());
         displayField(contacts[i].getLastName());
         displayField(contacts[i].getNickname());
@@ -120,17 +122,24 @@ void PhoneBook::promptSearch() const {
 }
 
 void PhoneBook::displayField(const std::string str) const {
-    std::cout << std::left << std::setw(10) << str << " | ";
+    std::cout << std::right << std::setw(10) << (str.length() < 10 ? str : str.substr(0, 9).append(".")) << " | ";
 }
 
 
 void PhoneBook::printContact(int index) const {
+    std::string temp;
+
+    system("clear");
+    std::cout << "=============================================\n";
+    std::cout << "Your Search Result: \n";
+    std::cout << "=============================================\n\n";
     std::cout << "First Name: " << contacts[index].getFirstName() << std::endl;
     std::cout << "Last Name: " << contacts[index].getLastName() << std::endl;
     std::cout << "Nickname: " << contacts[index].getNickname() << std::endl;
     std::cout << "Phone Number: " << contacts[index].getPhone() << std::endl;
     std::cout << "Secret: " << contacts[index].getSecret() << std::endl;
-    std::cout << "Press Enter to go back to PhoneBook main page ";
-    std::getline(std::cin, new_info);
+    std::cout << "\n=============================================\n";
+    std::cout << "Press Enter to go back to main menu ";
+    std::getline(std::cin, temp);
 }
 
