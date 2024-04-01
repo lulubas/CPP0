@@ -6,7 +6,7 @@
 #    By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 17:07:24 by lbastien          #+#    #+#              #
-#    Updated: 2024/03/31 19:33:48 by lbastien         ###   ########.fr        #
+#    Updated: 2024/04/01 02:29:53 by lbastien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ $(TARGET): $(OBJ)
 clean:
 	rm -rf $(OBJ)
 	rm -rf $(OBJ:.o=.d)
+	
 #Also clean up the target executable
 fclean: clean
 	rm $(TARGET)
