@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 21:18:19 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/11 03:10:30 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/04/11 03:11:23 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,9 @@ void    Account::displayStatus( void ) const {
 void	Account::_displayTimestamp( void ) {
 
     char formatted[20];
-
-    std::time_t now = std::time(nullptr);
+    std::time_t now;
+    
+    now = std::time(nullptr);
     std::strftime(formatted, sizeof(formatted), "[%Y%m%d_%H%M%S] ", std::localtime(&now));
     
     std::cout << formatted;
