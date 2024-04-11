@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 21:18:19 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/11 03:04:52 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/04/11 03:07:33 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <ctime>
 #include <iostream>
 #include <iomanip>
+
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 Account::Account( int initial_deposit ) : _amount( initial_deposit ) {
     
@@ -109,7 +114,6 @@ int Account::checkAmount( void ) const {
     return (_amount);
 }
 
-
 void    Account::displayStatus( void ) const {
     
     _displayTimestamp();
@@ -120,7 +124,12 @@ void    Account::displayStatus( void ) const {
     std::cout << std::endl;
 }
 
-void	_displayTimestamp( void ) {
-    std::time_t result = std::time(nullptr);
-    std::cout << std::asctime(std::localtime(&result)) << " ";
+void	Account::_displayTimestamp( void ) {
+
+    char formatted[20];
+
+    std::time_t now = std::time(nullptr);
+    std::strftime(formatted, sizeof(formatted), "[%Y%m%d_%H%M%S] ", std::localtime(&now));
+    
+    std::cout << formatted;
 }
