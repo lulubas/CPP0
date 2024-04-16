@@ -6,7 +6,7 @@
 #    By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 17:07:24 by lbastien          #+#    #+#              #
-#    Updated: 2024/04/01 02:29:53 by lbastien         ###   ########.fr        #
+#    Updated: 2024/04/16 03:22:57 by lbastien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,10 @@ DEP = $(OBJ:.o=.d)
 
 # Default target
 all: $(TARGET)
+
+# Run target
+run: all
+	./$(TARGET)
 
 # Compile .cpp files into .o object files
 %.o : %.cpp
