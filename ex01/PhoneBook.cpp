@@ -6,12 +6,11 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:15:48 by lbastien          #+#    #+#             */
-/*   Updated: 2024/07/23 17:06:39 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:39:13 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 PhoneBook::PhoneBook() : nextIndex(0) {}
 

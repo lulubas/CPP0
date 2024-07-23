@@ -6,11 +6,10 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:15:16 by lbastien          #+#    #+#             */
-/*   Updated: 2024/07/23 16:01:39 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:39:00 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
 #include "PhoneBook.hpp"
 
 int main(void)
