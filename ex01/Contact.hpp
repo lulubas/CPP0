@@ -6,14 +6,15 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:43:01 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/01 00:26:30 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:53:45 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include "main.hpp"
+#include <string>
+#include <iostream>
 
 class Contact {
     public:

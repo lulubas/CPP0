@@ -6,11 +6,11 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:43:11 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/01 00:24:51 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:01:20 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "Contact.hpp"
 
 Contact::Contact() : valid(false) {}
 

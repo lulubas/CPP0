@@ -6,11 +6,12 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:15:16 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/01 02:23:33 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:01:39 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {
@@ -30,8 +31,8 @@ int main(void)
 		else if (str == "EXIT")
 		{
 			Mybook.sayGoodbye();
-			return (EXIT_SUCCESS);
+			return (0);
 		}
 	}
-	return(EXIT_SUCCESS);
+	return(0);
 }

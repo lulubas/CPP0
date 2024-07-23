@@ -66,6 +66,13 @@
 		"variant": "cpp",
 		"compare": "cpp",
 		"concepts": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"*.tcc": "cpp",
+		"deque": "cpp",
+		"memory_resource": "cpp",
+		"numeric": "cpp",
+		"random": "cpp",
+		"numbers": "cpp",
+		"ranges": "cpp"
 	}
 }

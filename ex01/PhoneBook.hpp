@@ -6,14 +6,25 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:16:40 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/01 00:23:23 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:45:10 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "main.hpp"
+#include"Contact.hpp"
+
+#include <string>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <cctype>
+
+std::string iToString(const int i);
+bool isNumber(std::string str);
+int sToInt(std::string str);
 
 class PhoneBook {
     public:

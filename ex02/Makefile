@@ -6,7 +6,7 @@
 #    By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 17:07:24 by lbastien          #+#    #+#              #
-#    Updated: 2024/07/23 17:05:39 by lbastien         ###   ########.fr        #
+#    Updated: 2024/07/23 17:05:34 by lbastien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,10 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # Target executable name
-TARGET = phonebook
+TARGET = account
 
 # Source, Object, Dependency files
-SRC = main.cpp PhoneBook.cpp Contact.cpp
+SRC = tests.cpp Account.cpp
 OBJ = $(SRC:.cpp=.o)
 DEP = $(OBJ:.o=.d)
 

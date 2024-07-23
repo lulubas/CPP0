@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:15:48 by lbastien          #+#    #+#             */
-/*   Updated: 2024/04/01 02:23:31 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:06:39 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 PhoneBook::PhoneBook() : nextIndex(0) {}
 
@@ -67,7 +68,6 @@ std::string PhoneBook::inputInfo(std::string str) {
 void PhoneBook::searchContact() const {
     int index;
     std::string str;
-    
     PhoneBook::promptSearch();
     std::cout << "Enter contact #";
     while (true)
@@ -76,26 +76,21 @@ void PhoneBook::searchContact() const {
         std::getline(std::cin, str);
         if (str == "EXIT")
             break;
-            
-        try {
-            index = std::stoi(str);
-        } catch (const std::invalid_argument& e) {
-            std::cerr << "Invalid input: Please enter an integer (numbers)\n";
-            continue;
-        } catch (const std::out_of_range& e) {
-            std::cerr << "Invalid input: the number entered is out of range for an integer.\n";
+        if (!isNumber(str)) {
+            std::cout << "Invalid input: Please enter an integer (numbers)\n";
             continue;
         }
-        
-        if (index > 8 || index < 1)
-            std::cout << "Choose a number between 1 and 8\n";
-        else if (!contacts[index - 1].isValid())
+        index = sToInt(str);
+        if (index < 1 || index > 8) {
+           std::cout << "Invalid input:  Please chooe a number between 1 and 8\n";
+            continue;
+        }
+        if (!contacts[index - 1].isValid()){
             std::cout << "Contact does not exist\n";
-        else
-        {
-            PhoneBook::printContact(index - 1);
-            break;
+            continue;
         }
+        PhoneBook::printContact(index - 1);
+        break;
     }
 }
 
@@ -113,7 +108,7 @@ void PhoneBook::promptSearch() const {
     std::cout << std::endl;
 
     for (i = 0; i < 8; i++) {
-        displayField(std::to_string(i + 1));
+        displayField(iToString(i + 1));
         displayField(contacts[i].getFirstName());
         displayField(contacts[i].getLastName());
         displayField(contacts[i].getNickname());
@@ -143,3 +138,28 @@ void PhoneBook::printContact(int index) const {
     std::getline(std::cin, temp);
 }
 
+std::string iToString(const int i) {
+    std::ostringstream oss;
+    oss << i;
+    return oss.str();
+}
+
+int sToInt(std::string str) {
+    int num = 0;
+    int i = 0;
+    while(str[i]) {
+        num = num * 10 + (str[i] - '0');
+        i++;
+    }
+    return num;
+}
+
+bool isNumber(std::string str) {
+    int i = 0;
+    while (str[i]) {
+        if (!isdigit(str[i]))
+            return false;
+        i++;
+    }
+    return true;
+}
