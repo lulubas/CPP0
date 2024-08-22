@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:15:48 by lbastien          #+#    #+#             */
-/*   Updated: 2024/07/23 17:39:13 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:37:25 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ std::string PhoneBook::inputInfo(std::string str) {
     while (new_info.empty())
     {
         std::cout << "Enter " << str << ": ";
-        std::getline(std::cin, new_info);
+        if (!std::getline(std::cin, new_info))
+            break;
     }
     return (new_info);
 }
@@ -72,7 +73,8 @@ void PhoneBook::searchContact() const {
     while (true)
     {
         std::cout << "Enter contact index> ";
-        std::getline(std::cin, str);
+        if (!std::getline(std::cin, str))
+            break;
         if (str == "EXIT")
             break;
         if (!isNumber(str)) {

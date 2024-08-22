@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 21:18:19 by lbastien          #+#    #+#             */
-/*   Updated: 2024/07/23 17:10:20 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:30:35 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void    Account::displayAccountsInfos( void ) {
     std::cout << "accounts:" << iToString(getNbAccounts()) << ";";
     std::cout << "total:" << iToString(getTotalAmount()) << ";";
     std::cout << "deposits:" << iToString(getNbDeposits()) << ";";
-    std::cout << "withdrawals:" << iToString(getNbWithdrawals()) << ";";
+    std::cout << "withdrawals:" << iToString(getNbWithdrawals());
     std::cout << std::endl;
 }
 
@@ -86,7 +86,7 @@ void    Account::makeDeposit( int deposit) {
     std::cout << "p_amount:" << iToString(checkAmount() - deposit) << ";";
     std::cout << "deposit:" << iToString(deposit) << ";";
     std::cout << "amount:" << iToString(checkAmount()) << ";";
-    std::cout << "nb_deposits:" << iToString(_nbDeposits) << ";";
+    std::cout << "nb_deposits:" << iToString(_nbDeposits);
     std::cout << std::endl;
 }
 
@@ -96,7 +96,7 @@ bool    Account::makeWithdrawal( int withdrawal) {
         _displayTimestamp();
         std::cout << "index:" << iToString(_accountIndex) << ";";
         std::cout << "p_amount:" << iToString(checkAmount()) << ";";
-        std::cout << "withdrawal: refused";
+        std::cout << "withdrawal:refused";
         std::cout << std::endl;
         return (false);
     }
@@ -111,7 +111,7 @@ bool    Account::makeWithdrawal( int withdrawal) {
     std::cout << "p_amount:" << iToString(checkAmount() + withdrawal) << ";";
     std::cout << "withdrawal:" << iToString(withdrawal) << ";";
     std::cout << "amount:" << iToString(checkAmount()) << ";";
-    std::cout << "nb_withdrawals:" << iToString(_nbWithdrawals) << ";";
+    std::cout << "nb_withdrawals:" << iToString(_nbWithdrawals);
     std::cout << std::endl;
     
     return (true);
@@ -127,7 +127,7 @@ void    Account::displayStatus( void ) const {
     std::cout << "index:" << iToString(_accountIndex) << ";";
     std::cout << "amount:" << iToString(checkAmount()) << ";";
     std::cout << "deposits:" << iToString(_nbDeposits) << ";";
-    std::cout << "withdrawals:" << iToString(_nbWithdrawals) << ";";
+    std::cout << "withdrawals:" << iToString(_nbWithdrawals);
     std::cout << std::endl;
 }
 

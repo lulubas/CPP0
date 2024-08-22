@@ -6,13 +6,13 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:15:16 by lbastien          #+#    #+#             */
-/*   Updated: 2024/07/23 17:39:00 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:35:15 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int main(void)
+int main(void) 
 {
 	std::string str;
 	PhoneBook Mybook;
@@ -22,7 +22,8 @@ int main(void)
 		Mybook.sayHello();
 		std::cout << "What would you like to do now?\n";
     	std::cout << "> ";
-		std::getline(std::cin, str);
+		if (!std::getline(std::cin, str))
+            break;
 		if (str == "ADD")
 			Mybook.addContact();
 		else if (str == "SEARCH")
